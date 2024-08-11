@@ -1,0 +1,30 @@
+//This is the worst code ever but it is a placeholder until I see how to fix this
+
+{
+  "manifest_version": 3,
+  "name": "YouTube Duration Filter",
+  "version": "1.0",
+  "description": "Filters YouTube videos from shortest to longest duration.",
+  "permissions": [
+    "tabs",
+    "activeTab",
+    "scripting"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://www.youtube.com/*"],
+      "js": ["content.js"]
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icon16.png",
+      "48": "icon48.png",
+      "128": "icon128.png"
+    }
+  }
+}
